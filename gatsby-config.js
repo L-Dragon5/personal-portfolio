@@ -1,11 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Portfolio - Joseph Oh`,
+    title: `Joseph Oh`,
     description: `Personal portfolio site with mission statement, summary about myself, and various projects that I've worked on.`,
-    author: `@L-Dragon5`,
+    author: `@L-Dragon555`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,8 +18,20 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/pages/work/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages/work`,
+        name: `markdown-pages`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -27,7 +44,5 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-offline`,
   ],
 }
