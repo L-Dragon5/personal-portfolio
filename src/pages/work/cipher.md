@@ -1,12 +1,18 @@
 ---
 path: "/work/cipher"
 title: "Fire Emblem Cipher Translations"
-projectLink: "http://cipher.joseph-oh.com/"
-technologies: "HTML, CSS, jQuery, PHP"
 coverImage: "./images/cipher.jpg"
 ---
-Used PHP to scrape images and English translations of popular Japanese trading card game, Fire Emblem Cipher, from the fanmade wiki. Used the information gathered and images to create a more easily searchable format for cards and information.
+Developed for popular Japanese trading card game, Fire Emblem Cipher.
 
-jQuery is used for pagination, modals, and live search.
+English translations are available on a fanmade wiki for the game, but it was difficult to navigate, especially while learning the game.
+
+I used PHP to web scrape the wiki of the card images and translations and use the data to create a more easily searchable format for cards and information.
+
+jQuery is used for loading cards, pagination, modals, and live search.
 
 Project is no longer being maintained.
+
+**Technologies:** HTML, CSS, jQuery, PHP
+
+[**Project Link (High Bandwidth Warning)**](http://cipher.joseph-oh.com/)

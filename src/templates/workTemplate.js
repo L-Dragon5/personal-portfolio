@@ -16,11 +16,6 @@ export default function Template({ data }) {
       <div className="work__content">
         <div className="work__content__body">
           <div dangerouslySetInnerHTML={{ __html: html }} className="work__content__body__description" />
-          <div className="work__content__body__technologies"><span>Technologies Used:</span> { frontmatter.technologies }</div>
-
-          { frontmatter.projectLink !== "" ? (
-            <a href={ frontmatter.projectLink } target="_blank" rel="noopener noreferrer" className="work__content__body__project-link">Project Link</a>
-          ) : null }
         </div>
         
         { frontmatter.coverImage !== null ? (
@@ -38,8 +33,6 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
-        projectLink
-        technologies
         coverImage {
           childImageSharp {
             sizes(maxWidth: 400) {
