@@ -1,0 +1,45 @@
+.about {
+    padding: 50px 20px;
+    background-color: #42FF67;
+
+    &__description {
+        text-align: center;
+        max-width: 992px;
+        margin: 0 auto;
+
+        &__introduction {
+            max-width: 660px;
+            margin: 0 auto;
+        }
+
+        &__split {
+            display: flex;
+            margin-bottom: 40px;
+
+            &__block {
+                flex: 1 0 0;
+                padding: 10px 20px;
+
+                & > h4 {
+                    font-weight: 600;
+                }
+
+                & > p {
+                    margin: 15px 0;
+                    text-align: left;
+                }
+            }
+        }
+
+        &__certifications {
+            margin-bottom: 50px;
+            & > a {
+                color: black;
+
+                &:hover, &:active {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

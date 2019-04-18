@@ -28,7 +28,10 @@ const Layout = ({ children }) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
           <main>{children}</main>
-          <footer>© Joseph Oh {new Date().getFullYear()}</footer>
+          <footer>
+            <p>© Joseph Oh {new Date().getFullYear()}</p>
+            <p>This website was developed using Gatsby, a JavaScript framework built on React.<br /><a href="https://github.com/L-Dragon5/personal-portfolio" target="_blank" rel="noopener noreferrer">Check out the code at my GitHub repository.</a></p>
+          </footer>
       </>
     )}
   />

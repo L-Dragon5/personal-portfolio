@@ -1,0 +1,23 @@
+body {
+    color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+main {
+    margin: 64px auto 0;
+}
+
+/* Class for full height and width for each section */
+.section {
+    min-height: calc(100vh - 63px);
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

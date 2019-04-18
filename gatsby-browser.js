@@ -5,7 +5,6 @@
  */
 
 // Import CSS
-import "./src/styles/layout.scss"
 import "./src/styles/main.scss"
 
  // Define service worker update
