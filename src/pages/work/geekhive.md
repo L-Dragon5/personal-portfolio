@@ -11,6 +11,6 @@ During my time as a full-time employee, I made further changes to the website in
 
 **Technologies:** HTML, SASS, jQuery, PHP
 
-**Frameworks: **WordPress
+**Frameworks:** WordPress
 
 [**Website URL**](https://www.geekhive.com/)
