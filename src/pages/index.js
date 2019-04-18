@@ -1,4 +1,6 @@
 import React from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -51,11 +53,47 @@ const AboutSection = () => (
   </div>
 )
 
-const WorkSection = () => (
-  <div id="work" className="work section">
+const WorkSection = () => {
+  const data = useStaticQuery(graphql`
+    query WorkQuery {
+      allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___title] }) {
+        edges {
+          node {
+            frontmatter {
+              path
+              title
+              coverImage {
+                childImageSharp {
+                  sizes(maxWidth: 400) {
+                    ...GatsbyImageSharpSizes
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
-  </div>
-)
+  const workPaths = data.allMarkdownRemark.edges;
+
+  return (
+    <div id="work" className="work section">
+      {workPaths.map(({ node }, i) => (
+        <Link to={node.frontmatter.path} key={i} className="work__link">
+          { node.frontmatter.coverImage !== null ? (
+            <Img sizes={ node.frontmatter.coverImage.childImageSharp.sizes } className="work__link__image" />
+          ) : null }
+
+          <div className="work__link__title">
+            { node.frontmatter.title }
+          </div>
+        </Link>
+      ))}
+    </div>
+  )
+}
 
 const ContactSection = () => (
   <div id="contact" className="contact section">

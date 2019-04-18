@@ -1,0 +1,28 @@
+.p404 {
+    text-align: center;
+    background-color: #2098D1;
+    color: white;
+    height: calc(100vh - 118px - 169px);
+
+    @include respond-above(xs) {
+        height: calc(100vh - 118px - 64px);
+    }
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        & > h1, & > h3 {
+            animation: fadeIn 3s forwards;
+            opacity: 0;
+        }
+        
+        & p {
+            margin-top: 50px;
+            animation: fadeIn 3s forwards 1.5s;
+            opacity: 0;
+        }
+    }
+}

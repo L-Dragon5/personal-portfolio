@@ -11,6 +11,5 @@ As founder and president of Kisetsucon, Inc. We needed a website and to showcase
 
 **Frameworks:** WordPress
 
-[**GitHub Repository**](https://github.com/L-Dragon5/kisetsucon-theme)
-
+[**GitHub Repository**](https://github.com/L-Dragon5/kisetsucon-wp-theme)
 [**Website URL**](https://kisetsucon.org/)
