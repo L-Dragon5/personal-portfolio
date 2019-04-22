@@ -1,4 +1,4 @@
-$colors: red, orange, yellow, green, blue, purple;
+$colors: #FF0000, #FFA500, #FFFF00, #008000, #0000FF, #800080, #A52A2A;
 $repeat: 12;
 
 .work {
@@ -11,15 +11,28 @@ $repeat: 12;
         color: white;
         text-decoration: none;
         overflow: hidden;
-        min-height: 250px;
+        min-height: 150px;
 
         // Set random background color for each link
         @for $i from 1 through $repeat {
             &:nth-of-type(#{length($colors)}n + #{$i}) {
-                background-color: lighten(nth($colors, random(length($colors))), 30%);
+                $color: lighten(nth($colors, random(length($colors))), 30%);
+                $light-color: lighten($color, 50%);
+
+                background: repeating-linear-gradient(
+                    45deg,
+                    $light-color,
+                    $light-color 30px,
+                    $color 30px,
+                    $color 40px
+                );
             }
         }
         $c: &; // Set parent as a variable
+
+        @include respond-above(xs) {
+            min-height: 250px;
+        }
 
         @include respond-above(sm) {
             flex-basis: 50%;
