@@ -1,7 +1,7 @@
 ---
 path: "/work/ws-deck-builder"
-title: "Weiss Schwarz Deck Builder"
-coverImage: ""
+title: "[Laravel] Weiss Schwarz Deck Builder"
+coverImage: "./images/400x250.png"
 ---
 Website developed for popular Japanese trading card game, Weiss Schwarz.
 
@@ -9,8 +9,6 @@ There was a online deck builder web application called wsdecks that allowed user
 
 This project was a test to see how quickly I could develop a responsive website using Laravel and Bootstrap and build upon the existing functionality of the original website. The site was never released to the public as it was more of a personal challenge. Anyways, a different site, EncoreDecks, took its place.
 
-**Technologies:** HTML, SASS, jQuery, PHP, MySQL
-
-**Frameworks:** Laravel
+**Technologies:** HTML, SASS, jQuery, Laravel
 
 [**GitHub Repository**](https://github.com/L-Dragon5/ws-deck-builder)

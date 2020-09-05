@@ -1,7 +1,7 @@
 ---
 path: "/work/portfolio"
-title: "This Portfolio Website"
-coverImage: ""
+title: "[Gatsby] This Portfolio Website"
+coverImage: "./images/portfolio.jpg"
 ---
 This website that you're viewing right now.
 
@@ -12,6 +12,6 @@ Gatsby is a static site generator that uses React and JavaScript to create pages
 
 The code is available on my GitHub below. You can see how things are connected together and how components work.
 
-**Technologies:** Gatsby, JavaScript (ES6+), HTML, SASS
+**Technologies:** Gatsby, HTML, SASS
 
 [**GitHub Repository**](https://github.com/L-Dragon5/personal-portfolio)

@@ -6,6 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import certSiteBuilder from "../images/CertifiedDrupalBuilder.jpg"
+import certDeveloper from '../images/CertifiedDrupalDeveloper.jpg';
+import certDeveloperFES from '../images/CertifiedDrupalDeveloperFES.jpg';
 
 const IntroSection = () => (
   <div id="intro" className="intro section">
@@ -23,7 +25,7 @@ const AboutSection = () => (
   <div id="about" className="about section">
     <div className="about__description">
       <div className="about__description__introduction">
-        <p>I am primarily a back-end web developer, but I have the skills and knowledge to work on the front-end as well.</p>
+        <p>I am a full-stack developer with a focus in back-end technologies.</p>
         <p>I have a broad range of experience in web architectures and can adapt quickly to unfamiliar workflows.</p>
       </div>
 
@@ -31,21 +33,23 @@ const AboutSection = () => (
         <div className="about__description__split__block">
           <h4>Front-End</h4>
           <p>I produce high quality, responsive websites with an exceptional user experience.</p>
-          <p>My usual toolset is HTML(5), CSS(3) [SASS], and JavaScript (pre-ES6).</p>
-          <p>I'm currently learning ES6+ and React to create more modern, decoupled web applications.</p>
+          <p>My usual toolset is HTML(5), CSS(3) [SASS], and JavaScript.</p>
+          <p>Lately, a lot of my personal projects have been built using React.</p>
         </div>
 
         <div className="about__description__split__block">
           <h4>Back-End</h4>
           <p>I setup various CMSes, such as Drupal 8 and Wordpress, and model content and post types for use.</p>
           <p>PHP is one of my strongest languages and I can develop custom themes, modules, and plugins for use in any website.</p>
-          <p>Outside of D8 and WP, I really enjoy using Laravel for personal projects.</p>
+          <p>Outside of D8 and WP, I really enjoy using Laravel REST API for personal projects. This works really well with React FE builds.</p>
         </div>
       </div>
 
       <div className="about__description__certifications">
         <h3>Certifications</h3>
-        <a href={ certSiteBuilder } target="_blank" rel="noopener noreferrer">Acquia Certified Site Builder - Drupal 8</a>
+        <a href={ certSiteBuilder } target="_blank">Acquia Certified Site Builder - Drupal 8</a><br />
+        <a href={ certDeveloper } target="_blank">Acquia Certified Developer - Drupal 8</a><br />
+        <a href={ certDeveloperFES } target="_blank">Acquia Certified Front End Specialist - Drupal 8</a>
       </div>
 
       <h3>Let's make something special together</h3>
@@ -64,8 +68,8 @@ const WorkSection = () => {
               title
               coverImage {
                 childImageSharp {
-                  sizes(maxWidth: 400) {
-                    ...GatsbyImageSharpSizes
+                  fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
@@ -83,7 +87,7 @@ const WorkSection = () => {
       {workPaths.map(({ node }, i) => (
         <Link to={node.frontmatter.path} key={i} className="work__link">
           { node.frontmatter.coverImage !== null ? (
-            <Img sizes={ node.frontmatter.coverImage.childImageSharp.sizes } className="work__link__image" />
+            <Img fluid={ node.frontmatter.coverImage.childImageSharp.fluid } className="work__link__image" />
           ) : null }
 
           <div className="work__link__title">

@@ -1,6 +1,6 @@
 ---
 path: "/work/cipher"
-title: "Fire Emblem Cipher Translations"
+title: "[Custom] Fire Emblem Cipher Translations"
 coverImage: "./images/cipher.jpg"
 ---
 Developed for popular Japanese trading card game, Fire Emblem Cipher.
@@ -14,5 +14,3 @@ jQuery is used for loading cards, pagination, modals, and live search.
 Project is no longer being maintained.
 
 **Technologies:** HTML, CSS, jQuery, PHP
-
-[**Project Link (High Bandwidth Warning)**](http://cipher.joseph-oh.com/)

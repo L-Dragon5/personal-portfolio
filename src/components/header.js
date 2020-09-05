@@ -18,7 +18,7 @@ class NavbarIcon extends React.Component {
 
   render() {
     return(
-      <a href className="navbar__icon" onClick={ this.onClick }><span className="hamburger"></span></a>
+      <a href="#" className="navbar__icon" onClick={ this.onClick }><span className="hamburger" aria-label="Mobile menu hamburger"></span></a>
     )
   }
 }
@@ -29,7 +29,7 @@ const Header = () => (
       <Link to="about" offset={-62} spy={true} smooth={true} duration={400} activeClass="navbar__link--active" className="navbar__link">About</Link>
       <Link to="work" offset={-62} spy={true} smooth={true} duration={400} activeClass="navbar__link--active" className="navbar__link">Work</Link>
       <Link to="contact" offset={-62} spy={true} smooth={true} duration={400} activeClass="navbar__link--active" className="navbar__link">Contact</Link>
-      <OuterLink to="https://docs.google.com/document/d/1JiHwoCyBUoEWvgm1F1g0zXwt_TSVxhCP1L4yKUVuyAQ/pub">Resume</OuterLink>
+      <OuterLink to="https://docs.google.com/document/d/e/2PACX-1vQPK-Ejqjmp7Gg1XzSSxUseDzixvzCDLbvHhtiDZVwFAX-sgfC2dacpYRLu4z9rnBLtriB2IyllNPWw/pub">Resume</OuterLink>
       <OuterLink to="https://github.com/L-Dragon5">GitHub</OuterLink>
     </div>
 

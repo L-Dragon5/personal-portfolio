@@ -19,7 +19,7 @@ export default function Template({ data }) {
         </div>
         
         { frontmatter.coverImage !== null ? (
-          <Img sizes={ frontmatter.coverImage.childImageSharp.sizes } className="single-work__content__image" />
+          <Img fluid={ frontmatter.coverImage.childImageSharp.fluid } className="single-work__content__image" />
         ) : null }
       </div>
     </div>
@@ -35,8 +35,8 @@ export const pageQuery = graphql`
         title
         coverImage {
           childImageSharp {
-            sizes(maxWidth: 400) {
-              ...GatsbyImageSharpSizes
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

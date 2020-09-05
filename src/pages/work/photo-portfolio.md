@@ -1,12 +1,12 @@
 ---
 path: "/work/photo-portfolio"
-title: "Personal Photo Portfolio"
-coverImage: ""
+title: "[GatsbyJS] Personal Photo Portfolio"
+coverImage: "./images/photo-portfolio.jpg"
 ---
 A custom photo gallery I created to showcase my portrait cosplay photography for the public.
 
-It allows slideshow viewing, download of album or individual photos, and viewing EXIF data of the photo.
+It allows slideshow viewing and download of album or individual photos.
 
-**Technologies:** HTML, CSS, jQuery, PHP
+**Technologies:** GatsbyJS
 
-[**Website URL**](http://photo.joseph-oh.com/)
+[**Website URL**](https://l-dragon.photography/)

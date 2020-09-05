@@ -2,16 +2,16 @@ $colors: #FF0000, #FFA500, #FFFF00, #008000, #0000FF, #800080, #A52A2A;
 $repeat: 12;
 
 .work {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    min-height: initial;
+    background: #FFA500;
 
     &__link {
-        flex: 0 1 100%;
         position: relative;
         color: white;
         text-decoration: none;
         overflow: hidden;
-        min-height: 150px;
 
         // Set random background color for each link
         @for $i from 1 through $repeat {
@@ -29,19 +29,6 @@ $repeat: 12;
             }
         }
         $c: &; // Set parent as a variable
-
-        @include respond-above(xs) {
-            min-height: 250px;
-        }
-
-        @include respond-above(sm) {
-            flex-basis: 50%;
-            min-height: initial;
-        }
-
-        @include respond-above(lg) {
-            flex-basis: 25%;
-        }
 
         &:hover, &:active {
             #{$c}__image {
