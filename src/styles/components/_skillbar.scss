@@ -1,0 +1,16 @@
+.skillbar {
+    margin: 0 0 8px;
+    &__outer {
+        background-color: #455A64;
+        width: 100%;
+    }
+
+    &__inner {
+        background-color: #CFD8DC;
+        padding: 8px 16px;
+    }
+
+    &__text {
+        color: #212121;
+    }
+}

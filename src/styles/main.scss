@@ -3,8 +3,11 @@
 @import "base/layout";
 @import "base/base";
 
+@import '~aos/dist/aos.css';
+
 // Component files
-@import "components/header";
+@import "components/skillbar";
+
 @import "components/intro";
 @import "components/about";
 @import "components/work";

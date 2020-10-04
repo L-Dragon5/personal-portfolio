@@ -1,8 +1,13 @@
 .intro {
-    text-align: center;
-    background-color: #2098D1;
-    color: white;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
     position: relative;
+    text-align: center;
+
+    & > div.gatsby-image-wrapper {
+        position: static !important;
+    }
 
     &__heading {
         position: absolute;
@@ -10,15 +15,24 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-        & > h1, & > h3 {
-            animation: fadeIn 3s forwards;
-            opacity: 0;
-        }
-        
-        & p {
-            margin-top: 50px;
-            animation: fadeIn 3s forwards 1.5s;
-            opacity: 0;
+        h3 {
+            margin: 36px 0 0;
         }
     }
+
+    &__scroll {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
 }

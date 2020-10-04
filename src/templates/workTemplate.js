@@ -1,29 +1,35 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import React from "react";
+import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
 
 export default function Template({ data }) {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
-  
+  const { markdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
+
   return (
     <div className="single-work__container">
       <div className="single-work__heading">
         <Link to="/">&laquo; Go Back</Link>
 
-        <h1>{ frontmatter.title }</h1>
+        <h1>{frontmatter.title}</h1>
       </div>
       <div className="single-work__content">
         <div className="single-work__content__body">
-          <div dangerouslySetInnerHTML={{ __html: html }} className="single-work__content__body__description" />
+          <div
+            dangerouslySetInnerHTML={{ __html: html }}
+            className="single-work__content__body__description"
+          />
         </div>
-        
-        { frontmatter.coverImage !== null ? (
-          <Img fluid={ frontmatter.coverImage.childImageSharp.fluid } className="single-work__content__image" />
-        ) : null }
+
+        {frontmatter.coverImage !== null ? (
+          <Img
+            fluid={frontmatter.coverImage.childImageSharp.fluid}
+            className="single-work__content__image"
+          />
+        ) : null}
       </div>
     </div>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -35,7 +41,7 @@ export const pageQuery = graphql`
         title
         coverImage {
           childImageSharp {
-            fluid(maxWidth: 400) {
+            fluid(maxWidth: 960) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -43,4 +49,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

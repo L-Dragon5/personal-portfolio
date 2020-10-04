@@ -1,5 +1,7 @@
 body {
-    color: black;
+    background-color: #607D8B;
+    color: #FFFFFF;
+    overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -7,17 +9,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px 0;
 }
 
-main {
-    margin: 63px auto 0;
-}
-
-/* Class for full height and width for each section */
+/* Class for full width for each section */
 .section {
-    min-height: calc(100vh - 63px);
     width: 100%;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
 }

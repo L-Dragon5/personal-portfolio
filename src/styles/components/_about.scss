@@ -1,40 +1,32 @@
 .about {
     padding: 50px 20px;
-    background-color: #42FF67;
+    background-color: #607D8B;
+    color: #FFFFFF;
 
     &__description {
-        text-align: center;
-        max-width: 992px;
-        margin: 0 auto;
-
         &__introduction {
-            max-width: 660px;
+            max-width: 960px;
             margin: 0 auto;
         }
 
-        &__split {
+        &__bars {
             display: flex;
-            margin-bottom: 40px;
+            flex-wrap: wrap;
+            border: 1px solid #BDBDBD;
+            border-radius: 3px;
+            padding: 12px;
+            margin-top: 48px;
 
-            &__block {
-                flex: 1 0 0;
-                padding: 10px 20px;
-
-                & > h4 {
-                    font-weight: 600;
-                }
-
-                & > p {
-                    margin: 15px 0;
-                    text-align: left;
-                }
+            &__section {
+                flex: 1 0 50%;
+                padding: 0 16px;
+                margin-bottom: 16px;
             }
         }
 
         &__certifications {
-            margin-bottom: 50px;
             & > a {
-                color: black;
+                color: #FFFFFF;
 
                 &:hover, &:active {
                     font-weight: 600;
