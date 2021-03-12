@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Template({ data }) {
   const { markdownRemark } = data;
@@ -22,9 +22,9 @@ export default function Template({ data }) {
         </div>
 
         {frontmatter.coverImage !== null ? (
-          <Img
-            fluid={frontmatter.coverImage.childImageSharp.fluid}
-            className="single-work__content__image"
+          <GatsbyImage
+            image={frontmatter.coverImage.childImageSharp.gatsbyImageData}
+            className="single-work__content__image" 
           />
         ) : null}
       </div>
@@ -41,9 +41,7 @@ export const pageQuery = graphql`
         title
         coverImage {
           childImageSharp {
-            fluid(maxWidth: 960) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED, width: 960)
           }
         }
       }

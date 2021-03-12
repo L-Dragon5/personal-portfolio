@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -36,9 +36,7 @@ const IndexPage = () => {
               title
               coverImage {
                 childImageSharp {
-                  fluid(maxWidth: 1920) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(layout: CONSTRAINED, width: 1920)
                 }
               }
             }
@@ -47,9 +45,7 @@ const IndexPage = () => {
       }
       file(relativePath: { eq: "intro-bg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2560) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -65,7 +61,7 @@ const IndexPage = () => {
       />
 
       <div className="intro section">
-        <Img fluid={data.file.childImageSharp.fluid} />
+        <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} alt="intro background" />
         <div className="overlay" />
         <div className="intro__heading">
           <h1
@@ -125,9 +121,10 @@ const IndexPage = () => {
               <h3>Languages</h3>
               <SkillBar text="HTML" amount={95} />
               <SkillBar text="CSS" amount={95} />
-              <SkillBar text="PHP" amount={93} />
-              <SkillBar text="JavaScript" amount={90} />
               <SkillBar text="SASS" amount={80} />
+              <SkillBar text="PHP" amount={93} />
+              <SkillBar text="JavaScript ES5+" amount={90} />
+              <SkillBar text="Typescript" amount={65} />
               <SkillBar text="GraphQL" amount={50} />
             </div>
 
@@ -148,9 +145,11 @@ const IndexPage = () => {
               data-aos-duration="750"
             >
               <h3>Frameworks/Libraries</h3>
-              <SkillBar text="React" amount={80} />
-              <SkillBar text="Laravel" amount={80} />
+              <SkillBar text="React" amount={85} />
+              <SkillBar text="Laravel" amount={85} />
               <SkillBar text="GatsbyJS" amount={65} />
+              <SkillBar text="Angular" amount={35} />
+              <SkillBar text="TailwindCSS" amount={75} />
             </div>
 
             <div
@@ -199,8 +198,8 @@ const IndexPage = () => {
             data-aos-offset="200"
           >
             {node.frontmatter.coverImage !== null ? (
-              <Img
-                fluid={node.frontmatter.coverImage.childImageSharp.fluid}
+              <GatsbyImage 
+                image={node.frontmatter.coverImage.childImageSharp.gatsbyImageData}
                 className="work__link__image"
               />
             ) : null}

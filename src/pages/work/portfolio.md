@@ -12,6 +12,6 @@ Gatsby is a static site generator that uses React and JavaScript to create pages
 
 The code is available on my GitHub below. You can see how things are connected together and how components work.
 
-**Technologies:** Gatsby, HTML, SASS
+**Technologies:** Gatsby, SASS
 
 [**GitHub Repository**](https://github.com/L-Dragon5/personal-portfolio)

@@ -1,6 +1,6 @@
 ---
 path: "/work/ws-app"
-title: "[Custom] Weiss Schwarz Translator"
+title: "[X-Deprecated] Weiss Schwarz Translator"
 coverImage: "./images/ws-app.jpg"
 ---
 Android application that uses an open-source image recognition API to display English translations of popular Japanese trading card game, Weiss Schwarz.

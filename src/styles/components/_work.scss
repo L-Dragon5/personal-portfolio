@@ -43,6 +43,10 @@ $repeat: 12;
             width: 100%;
             transition: transform 0.65s;
         }
+
+        & > div.gatsby-image-wrapper {
+            height: 100%;
+        }
     }
 }
 
