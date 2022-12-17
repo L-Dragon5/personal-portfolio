@@ -28,7 +28,7 @@ const IndexPage = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___title] }) {
+      allMarkdownRemark(sort: {frontmatter: {title: ASC}}) {
         edges {
           node {
             frontmatter {
