@@ -1,10 +1,14 @@
 import { ArrowDown, FileText, Github, Mail } from "lucide-react";
 import { motion } from "motion/react";
-import Aurora from "@/components/reactbits/Aurora";
+import { lazy, Suspense } from "react";
 import GradientText from "@/components/reactbits/GradientText";
 import SplitText from "@/components/reactbits/SplitText";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/resume";
+
+// Aurora pulls in OGL (WebGL); it's purely decorative, so load it lazily after
+// the page renders rather than in the initial bundle.
+const Aurora = lazy(() => import("@/components/reactbits/Aurora"));
 
 export function Hero() {
   return (
@@ -12,14 +16,16 @@ export function Hero() {
       id="top"
       className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-6 text-center"
     >
-      {/* WebGL aurora wash, kept behind content */}
+      {/* WebGL aurora wash, kept behind content; loaded lazily */}
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-50">
-        <Aurora
-          colorStops={["#ff2e93", "#22d3ee", "#a855f7"]}
-          amplitude={1.1}
-          blend={0.6}
-          speed={0.8}
-        />
+        <Suspense fallback={null}>
+          <Aurora
+            colorStops={["#ff2e93", "#22d3ee", "#a855f7"]}
+            amplitude={1.1}
+            blend={0.6}
+            speed={0.8}
+          />
+        </Suspense>
       </div>
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-background/30 via-background/55 to-background" />
 
@@ -71,9 +77,9 @@ export function Hero() {
         className="mt-10 flex flex-wrap items-center justify-center gap-3"
       >
         <Button asChild size="lg" className="font-medium">
-          <a href="#work">
+          <a href="#projects">
             <ArrowDown data-icon="inline-start" />
-            View my work
+            View my projects
           </a>
         </Button>
         <Button asChild size="lg" variant="secondary">

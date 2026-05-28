@@ -1,13 +1,21 @@
-import { ArrowUpRight, Github } from "lucide-react";
-import { type CSSProperties, type PointerEvent, useRef } from "react";
+import { ArrowUpRight, Github, Lock } from "lucide-react";
+import { type CSSProperties, type PointerEvent, useRef, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Section } from "@/components/Section";
 import { Badge } from "@/components/ui/badge";
 import { type Project, projects } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
+const TECH_LIMIT = 6;
+
 function ProjectCard({ project }: { project: Project }) {
   const ref = useRef<HTMLElement>(null);
+  const [showAllTech, setShowAllTech] = useState(false);
+
+  const hiddenCount = project.stack.length - TECH_LIMIT;
+  const visibleStack = showAllTech
+    ? project.stack
+    : project.stack.slice(0, TECH_LIMIT);
 
   // pointer-following spotlight tinted with the project's accent
   const handleMove = (e: PointerEvent<HTMLElement>) => {
@@ -34,8 +42,9 @@ function ProjectCard({ project }: { project: Project }) {
         }}
       />
 
-      {/* banner: screenshot if available, else an accent gradient */}
-      <div className="relative aspect-[16/9] overflow-hidden">
+      {/* banner: screenshot if available, else an accent gradient.
+          z-20 keeps it above the spotlight so the glow never tints the image. */}
+      <div className="relative z-20 aspect-[16/9] overflow-hidden">
         {project.image ? (
           <img
             src={project.image}
@@ -65,12 +74,12 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="relative z-20 flex flex-1 flex-col gap-4 p-6">
         <div className="flex items-center justify-between gap-3">
           <h3 className="font-display text-xl font-bold">{project.name}</h3>
-          {project.draft && (
+          {project.private && (
             <Badge
               variant="outline"
               className="shrink-0 font-mono text-[0.7rem] text-muted-foreground"
             >
-              details soon
+              Private
             </Badge>
           )}
         </div>
@@ -78,24 +87,40 @@ function ProjectCard({ project }: { project: Project }) {
         <p className="flex-1 text-muted-foreground">{project.tagline}</p>
 
         <div className="flex flex-wrap gap-1.5">
-          {project.stack.map((tech) => (
+          {visibleStack.map((tech) => (
             <Badge key={tech} variant="secondary" className="font-mono text-xs">
               {tech}
             </Badge>
           ))}
+          {hiddenCount > 0 && (
+            <button
+              type="button"
+              onClick={() => setShowAllTech((v) => !v)}
+              className="inline-flex items-center rounded-md border border-border px-2 py-0.5 font-mono text-xs text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
+            >
+              {showAllTech ? "Show less" : `+${hiddenCount} more`}
+            </button>
+          )}
         </div>
 
         <div className="mt-1 flex items-center gap-4 font-mono text-sm">
-          {project.repoUrl && (
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <Github className="size-4" />
-              Code
-            </a>
+          {project.private ? (
+            <span className="inline-flex items-center gap-1.5 text-muted-foreground">
+              <Lock className="size-4" />
+              Code available on request
+            </span>
+          ) : (
+            project.repoUrl && (
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <Github className="size-4" />
+                Code
+              </a>
+            )
           )}
           {project.liveUrl && (
             <a
@@ -120,8 +145,8 @@ function ProjectCard({ project }: { project: Project }) {
 export function Projects() {
   return (
     <Section
-      id="work"
-      eyebrow="04 / Selected Work"
+      id="projects"
+      eyebrow="04 / Projects"
       title={
         <>
           Things I&apos;ve <span className="text-gradient">built</span>.

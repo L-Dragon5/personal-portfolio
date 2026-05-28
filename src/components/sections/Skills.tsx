@@ -40,9 +40,13 @@ export function Skills() {
         </div>
       </Reveal>
 
-      <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {skills.map((group, i) => (
-          <Reveal key={group.label} delay={i * 0.05} className="bg-card/60">
+          <Reveal
+            key={group.label}
+            delay={i * 0.05}
+            className="rounded-xl border border-border bg-card/60"
+          >
             <div className="flex h-full flex-col gap-4 p-6">
               <h3 className="font-mono text-sm tracking-widest text-primary uppercase">
                 {group.label}
