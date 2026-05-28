@@ -10,8 +10,8 @@ export function About() {
       eyebrow="01 / About"
       title={
         <>
-          I build products that are{" "}
-          <span className="text-gradient">fast, polished, and fun</span> to use.
+          I obsess over the parts users{" "}
+          <span className="text-gradient">actually touch</span>.
         </>
       }
     >

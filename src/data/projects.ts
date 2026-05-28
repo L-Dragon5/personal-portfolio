@@ -72,7 +72,7 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "Vite", "Tailwind"],
     repoUrl: "https://github.com/L-Dragon5/personal-portfolio",
     liveUrl: "https://joseph-oh.com",
-    accent: "#ff7849",
+    accent: "#15803d",
     image: portfolioImg,
   },
 ];

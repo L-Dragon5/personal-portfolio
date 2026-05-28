@@ -13,7 +13,7 @@ export function Hero() {
       className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-6 text-center"
     >
       {/* WebGL aurora wash, kept behind content */}
-      <div className="pointer-events-none absolute inset-0 -z-10 opacity-70">
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-50">
         <Aurora
           colorStops={["#ff2e93", "#22d3ee", "#a855f7"]}
           amplitude={1.1}
@@ -21,7 +21,7 @@ export function Hero() {
           speed={0.8}
         />
       </div>
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-background/10 via-background/40 to-background" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-background/30 via-background/55 to-background" />
 
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -37,7 +37,7 @@ export function Hero() {
       </motion.div>
 
       <GradientText
-        colors={["#ff2e93", "#ffd23f", "#22d3ee", "#a855f7", "#ff2e93"]}
+        colors={["#15803d", "#10b981", "#0891b2", "#7c3aed", "#15803d"]}
         animationSpeed={7}
         className="!max-w-none font-display text-6xl font-extrabold tracking-tight sm:text-7xl md:text-8xl"
       >

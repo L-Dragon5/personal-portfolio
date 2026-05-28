@@ -39,12 +39,12 @@ export function Contact() {
             05 / Contact
           </p>
           <h2 className="mx-auto max-w-2xl text-4xl font-bold text-balance md:text-5xl">
-            Like what you see?{" "}
+            Got something to build?{" "}
             <span className="text-gradient">Let&apos;s talk.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-md text-lg text-muted-foreground">
-            I'm always open to interesting problems and good teams. The fastest
-            way to reach me is email.
+            I'm always up for a good problem or a good team. Email's the fastest
+            way to reach me.
           </p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">

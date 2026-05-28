@@ -21,7 +21,7 @@ export function Experience() {
           >
             <Reveal delay={i * 0.05}>
               {/* node */}
-              <span className="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-gradient-to-br from-pink to-cyan ring-4 ring-background" />
+              <span className="absolute -left-[7px] top-1.5 size-3.5 rounded-full bg-gradient-to-br from-forest to-emerald ring-4 ring-background" />
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 className="text-xl font-semibold">
                   {role.title}{" "}

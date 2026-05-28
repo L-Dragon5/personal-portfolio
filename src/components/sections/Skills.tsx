@@ -34,7 +34,7 @@ export function Skills() {
             pauseOnHover
             scaleOnHover
             fadeOut
-            fadeOutColor="oklch(0.2 0.022 278)"
+            fadeOutColor="oklch(1 0 0)"
             ariaLabel="Technologies I work with"
           />
         </div>

@@ -12,8 +12,9 @@ export const profile = {
   resume:
     "https://docs.google.com/document/d/e/2PACX-1vR6GtezGh7XRZroTFWu3e8y28yFAsI42ERn09YmwpL3ol3lJkA2dJBjwQFbqLCfwkufohavmBdVitAO/pub",
   blurb: [
-    "I'm a full-stack web developer with a frontend focus. I build high-quality, responsive products and care about the details that make an interface feel good to use.",
-    "Most of my recent work is in TypeScript and React, backed by Laravel, Bun, and ElysiaJS. I move quickly across unfamiliar codebases and like setting the standards that keep a frontend healthy as a team grows.",
+    "I'm a full-stack developer who lives mostly on the frontend. I like building things people actually want to use, and I sweat the small interactions most teams skip past.",
+    "Lately that's TypeScript and React on top of Laravel, Bun, and ElysiaJS. I'm comfortable dropping into a codebase I've never seen, and I'm usually the person who sets the conventions that keep a frontend from rotting as the team grows.",
+    "I also build with AI in the loop every day. Claude Code handles a lot of my scaffolding, refactors, and first-pass code review, so I can move fast and spend my time on the harder design and architecture calls. When an app needs AI features of its own, I reach for Gemini and other models through their APIs.",
   ],
 } as const;
 
@@ -109,6 +110,10 @@ export const skills: SkillGroup[] = [
     label: "Tooling",
     items: ["Node.js", "Bun", "Vite", "Biome"],
   },
+  {
+    label: "AI",
+    items: ["Claude Code", "Gemini", "LLM APIs"],
+  },
 ];
 
 /** Flat marquee list for the LogoLoop. */
@@ -127,4 +132,6 @@ export const techMarquee: string[] = [
   "Playwright",
   "Vitest",
   "Node.js",
+  "Claude Code",
+  "Gemini",
 ];
