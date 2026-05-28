@@ -26,13 +26,7 @@ export function Nav() {
         scrolled && "border-b border-border bg-background/70 backdrop-blur-xl",
       )}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
-        <a
-          href="#top"
-          className="font-display text-lg font-extrabold tracking-tight"
-        >
-          jo<span className="text-gradient">.</span>
-        </a>
+      <nav className="mx-auto flex max-w-6xl items-center justify-end px-6 py-4 sm:px-8">
         <ul className="hidden items-center gap-7 md:flex">
           {LINKS.map((link) => (
             <li key={link.href}>

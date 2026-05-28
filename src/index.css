@@ -126,14 +126,14 @@
   }
 }
 
+/* Heading highlight — a restrained green tonal sweep (the rainbow is reserved
+   for the hero name only). */
 @utility text-gradient {
   background: linear-gradient(
-    100deg,
+    105deg,
     var(--forest),
-    var(--emerald) 28%,
-    var(--cyan) 52%,
-    var(--violet) 78%,
-    var(--pink)
+    var(--emerald) 55%,
+    var(--lime)
   );
   -webkit-background-clip: text;
   background-clip: text;
